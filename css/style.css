@@ -1,0 +1,646 @@
+/* CONFIGURACIONES BASICAS */
+@font-face {
+    font-family: 'Cinzel';
+    src: url('/assets/fonts/Cinzel_Decorative/CinzelDecorative-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'CinzelBlack';
+    src: url('/assets/fonts/Cinzel_Decorative/CinzelDecorative-Black.ttf');
+}
+
+
+@font-face {
+    font-family: 'Merriwather';
+    src: url('/assets/fonts/Merriweather/static/Merriweather_120pt-Regular.ttf');
+}
+
+.navbar-brand {
+    font-family: 'Cinzel', 'serif';
+}
+
+li {
+    font-family: 'Cinzel', 'serif';
+}
+
+h1 {
+    font-family: 'CinzelBlack', 'serif';
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Cinzel', 'serif';
+}
+
+p {
+    font-family: 'Merriwather', 'serif';
+}
+
+body {
+    background-color: black;
+}
+
+html {
+    scroll-snap-type: y proximity;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+#header {
+    background-color: transparent !important;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+section {
+    padding: 80px 40px;
+    color: white;
+}
+
+#footer a {
+    color: red;
+    text-decoration: none;
+    /* opcional, quita subrayado */
+}
+
+#footer a:hover {
+    color: darkred;
+    /* opcional, color al pasar el mouse */
+}
+
+/*-------------- VIDEO DE FONDO */
+.section-video {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    /* ALTURA A CUBRIR VIDEO (100%)*/
+}
+
+.section-video .video_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.section-video .video_background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.3);
+}
+
+/* CONTENIDO EN VIDEO */
+.section-video .section-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-top: 120px;
+}
+
+/*-------------- FIN VIDEO DE FONDO */
+
+
+/*-------------- VIDEO GENERAL */
+.video_gn_background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video_gn_background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.35);
+}
+
+/*-------------- FIN VIDEO GENERAL */
+
+
+/*-------------- SECCION PERSONAJES */
+.section-guts,
+.section-griffith,
+.section-femto,
+.section-banda,
+.section-etapas,
+.section-guts-post {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    position: relative;
+    padding: 100px 0;
+    min-height: 100vh;
+}
+
+.section-guts h1,
+.section-griffith h1,
+.section-femto h1,
+.section-banda h1,
+.section-etapas h1,
+.section-guts-post h1 {
+    animation: lights 5s 750ms linear infinite;
+}
+
+#guts-side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    z-index: 1;
+}
+
+#griffith-side {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.guts-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: 0;
+    color: rgb(240, 114, 114);
+    opacity: 0;
+    transform: translateX(50px);
+    /*POSICION INICIAL PARA ANIMACION*/
+    transition: all 2s ease-out;
+}
+
+.griffith-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin-right: auto;
+    margin-left: 0;
+    color: rgb(165, 240, 245);
+    opacity: 0;
+    transform: translateX(50px);
+    /*POSICION INICIAL PARA ANIMACION*/
+    transition: all 2s ease-out;
+}
+
+.femto-content {
+    position: relative;
+    z-index: 2;
+    color: rgb(220, 112, 241);
+    opacity: 0;
+    transform: translateY(50px);
+    /*POSICION INICIAL PARA ANIMACION*/
+    transition: all 2s ease-out;
+    border-color: purple !important;
+}
+
+.banda-card {
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #793333;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.banda-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 15px rgba(177, 18, 18, 0.6);
+}
+
+.guts-content.visible,
+.griffith-content.visible {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.femto-content.visible {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.video-femto-der{
+    opacity: 0;
+    transform: translateX(100px);
+    /*POSICION INICIAL PARA ANIMACION*/
+    transition: all 5s ease-out;
+}
+
+.video-femto-izq{
+    opacity: 0;
+    transform: translateX(-100px);
+    /*POSICION INICIAL PARA ANIMACION*/
+    transition: all 5s ease-out;
+}
+
+.video-femto-izq.visible, .video-femto-der.visible {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.carousel-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+#descripcion-evento {
+    transition: opacity 0.3s ease;
+}
+
+.posteclipse-event {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1.5s ease;
+}
+
+.posteclipse-event.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.posteclipse-event:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.posteclipse-event-img {
+    width: 50%;
+    border-radius: 1rem;
+    border: 2px solid #6b0000;
+    box-shadow: 0 0 20px rgba(255,0,0,0.4);
+}
+
+.posteclipse-content {
+    max-width: 45%;
+}
+/* Responsive: apilar los eventos en pantallas pequeñas */
+@media (max-width: 768px) {
+    .posteclipse-event {
+        flex-direction: column !important;
+        align-items: stretch;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .posteclipse-event:nth-child(even) {
+        flex-direction: column !important;
+    }
+
+    .posteclipse-event-img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .posteclipse-content {
+        max-width: 100%;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .posteclipse-event {
+        gap: 0.75rem;
+    }
+
+    .section-guts-post {
+        padding: 40px 12px;
+        min-height: auto;
+    }
+
+    .posteclipse-content h2 { font-size: 1.1rem; }
+    .posteclipse-content p { font-size: 0.95rem; }
+}
+/*-------------- FIN SECCION PERSONAJES */
+
+
+/* BOTON PERSONALIZADO */
+/* From Uiverse.io by mrhyddenn */
+.btn-cm {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid rgb(54, 187, 228);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+.btn-cm:hover {
+    background: rgb(175, 56, 72);
+    box-shadow: 0 0 30px 5px rgba(255, 0, 0, 0.815);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+.btn-cm:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+}
+
+.btn-cm::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+.btn-cm:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+}
+
+
+/* FIN BOTON PERSONALIZADO */
+
+/* EFECTO MÁQUINA DE ESCRIBIR */
+
+.typewriter h1 {
+    overflow: hidden;
+    border-right: .15em solid rgb(138, 17, 17);
+    white-space: nowrap;
+    margin: 0 auto;
+    animation:
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end 3.5s forwards;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 29ch
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+}
+
+/* FIN EFECTO MÁQUINA DE ESCRIBIR */
+
+/* ANIMACIONES PARA PALABRAS */
+
+.loading-text {
+    place-self: center;
+    background: linear-gradient(90deg, var(--color-start), var(--color-middle), var(--color-end)) -100%/ 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 2s linear infinite
+}
+
+@keyframes shimmer {
+    to {
+        background-position: 100%
+    }
+}
+
+.txt-traicion {
+    --color-start: #8b0000;
+    --color-middle: #470000;
+    --color-end: #a30000;
+}
+
+.txt-dolor {
+    --color-start: #a30034;
+    --color-middle: #60001a;
+    --color-end: #c3073f;
+}
+
+.txt-desesperacion {
+    --color-start: #9261c7;
+    --color-middle: #8b8b8b;
+    --color-end: #5a3d7a;
+}
+
+.txt-destino {
+    --color-start: #b4983a;
+    --color-middle: #6b5a22;
+    --color-end: #e0c16a;
+}
+
+.txt-casualidad {
+    --color-start: #5f728a;
+    --color-middle: #3a4654;
+    --color-end: #89a0b8;
+}
+
+/*  2DO TIPO ANIMACIONES  */
+@keyframes lights {
+    0% {
+        color: hsl(0, 100%, 80%);
+        text-shadow:
+            0 0 1em hsla(0, 100%, 50%, 0.7),
+            0 0 0.25em hsla(0, 100%, 40%, 0.9),
+            -1em 0 0.4em hsla(0, 60%, 40%, 0.3),
+            1em 0 0.4em hsla(0, 60%, 40%, 0.3);
+    }
+
+    30%,
+    40% {
+        color: hsl(210, 100%, 95%);
+        text-shadow:
+            0 0 1em hsla(210, 100%, 70%, 0.7),
+            0 0 0.25em hsla(210, 100%, 90%, 1),
+            -0.5em 0 0.4em hsla(200, 80%, 80%, 0.4),
+            0.5em 0 0.4em hsla(200, 60%, 70%, 0.4);
+    }
+
+    70% {
+        color: hsl(280, 90%, 85%);
+        text-shadow:
+            0 0 1.2em hsla(280, 100%, 60%, 0.7),
+            0 0 0.3em hsla(280, 100%, 75%, 1),
+            -0.6em 0 0.6em hsla(280, 70%, 40%, 0.4),
+            0.6em 0 0.6em hsla(290, 70%, 50%, 0.4);
+    }
+
+    100% {
+        color: hsl(0, 100%, 75%);
+        text-shadow:
+            0 0 1em hsla(0, 100%, 45%, 0.6),
+            0 0 0.25em hsla(0, 100%, 55%, 0.9),
+            -1em 0 0.4em hsla(0, 70%, 40%, 0.25),
+            1em 0 0.4em hsla(0, 70%, 40%, 0.25);
+    }
+}
+
+/* FIN ANIMACIONES PARA PALABRAS */
+
+
+
+
+/* RESPONSIVE */
+
+@media (min-width: 1700px) {
+    .griffith-content {
+        margin-left: -10rem;
+    }
+
+    .guts-content {
+        margin-right: -10rem;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        scroll-snap-type: y proximity;
+        scroll-behavior: smooth;
+    }
+
+    .typewriter h1 {
+        white-space: normal;
+        animation: none;
+        border-right: none;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 992px) {
+    section {
+        padding: 60px 20px;
+    }
+
+    .section-video {
+        min-height: 70vh;
+    }
+
+    .section-video .section-content {
+        padding-top: 100px;
+    }
+
+    .guts-content,
+    .griffith-content {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .banda-content {
+        gap: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    section {
+        padding: 40px 12px;
+    }
+
+    :root {
+        --navbar-height: 30px;
+    }
+
+    body {
+        padding-top: var(--navbar-height);
+    }
+
+    .section-video {
+        min-height: 55vh;
+    }
+
+    .section-video .section-content {
+        padding-top: 80px;
+    }
+
+    #guts-side,
+    #griffith-side {
+        display: none;
+    }
+
+    .section-video .section-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .section-video .section-content h2 {
+        font-size: 0.95rem;
+    }
+}
+
+
